@@ -1,11 +1,22 @@
-// var ask = prompt('Digite o seu nome: ')
-
 function calcular(tipo, valor){
-
-    
 
     if (tipo === 'acao'){
 
+        if (valor === 'c'){
+            /*Limpar o visor (id resultado) */
+            document.getElementById('resultado').value = ''
+        }
+
+        if (valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.'){
+            document.getElementById('resultado').value += valor
+        }
+
+        if (valor === '='){
+            var valor_do_campo = eval(document.getElementById('resultado').value) 
+
+            document.getElementById('resultado').value = valor_do_campo
+        }
+            
     } else if(tipo === 'valor'){
 
         document.getElementById('resultado').value += valor 
